@@ -9,10 +9,7 @@ const warning = document.querySelector('.warning')
 let passwords = document.getElementById('password');
 
 
-// signUp.addEventListener('click', (e)=>{
-//   e.preventDefault()
-//   console.log('hello')
-// })
+
 
 const signinUp = (database, auth, stt, ref,child, get, update, createUserWithEmailAndPassword, sendEmailVerification)=>{
 
@@ -23,7 +20,7 @@ const signinUp = (database, auth, stt, ref,child, get, update, createUserWithEma
     const emailArray = []
     let idNo = 0;
     let balance = 0.00;
-    if(username.length < 6){
+    if(username.length < 5){
       warning.style.display = 'block'
       warning.innerHTML = 'Minimum length of username is 6'
       passwords.value =''
@@ -50,12 +47,12 @@ const signinUp = (database, auth, stt, ref,child, get, update, createUserWithEma
       if(snapshot.exists()){
         let usd = Object.values(snapshot.val())
         for(let i = 0; i < usd.length; i++){
-          let tems = usd[i].username;
+          let tems = usd[i].username.toLowerCase();
           let mailed = usd[i].email;
           array.push(tems)
           emailArray.push(mailed)
         }
-        if(array.includes(username)){
+        if(array.includes(username.toLowerCase())){
           warning.style.display = 'block'
           warning.innerHTML = username + ' already exits' 
           passwords.value =''          
@@ -80,7 +77,7 @@ const signinUp = (database, auth, stt, ref,child, get, update, createUserWithEma
             // ...
             update(ref(database, 'users/' + user.uid),{
               email: email,
-              username: username,
+              username: username.toLowerCase(),
               last_login: date,
               idNo,
               balance: parseFloat(balance.toFixed(2)),
@@ -91,7 +88,13 @@ const signinUp = (database, auth, stt, ref,child, get, update, createUserWithEma
           .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            alert(errorMessage)
+            if(errorCode === 'auth/email-already-in-use'){
+              warning.style.display = 'block'
+              warning.innerHTML = email + ' already exits' 
+              
+              passwords.value ='' 
+            }
+            // alert(errorCode)
             // ..
           });
           
@@ -118,7 +121,7 @@ const signinUp = (database, auth, stt, ref,child, get, update, createUserWithEma
                 email: email,
                 idNo,
                 last_login: date,
-                username: username,
+                username: username.toLowerCase(),
                 balance: parseFloat(balance.toFixed(2)),
                 tbody: ''
               })

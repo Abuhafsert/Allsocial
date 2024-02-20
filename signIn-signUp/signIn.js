@@ -39,7 +39,7 @@ if(window.location.pathname === '/main/signIn-signUp/signIn.html'){
 
 
 
-const signinIn = (signInWithEmailAndPassword, auth, database, ref,child, get, update, stt)=>{
+const signinIn = async (signInWithEmailAndPassword, auth, database, ref,child, get, update, stt)=>{
 
 
   // signIn.addEventListener('click', (e) => {
@@ -60,7 +60,7 @@ const signinIn = (signInWithEmailAndPassword, auth, database, ref,child, get, up
       passwords.value = ''
     }else{
     const array = []
-    get(child(stt, 'users' )).then( async (snapshot) => {
+    await get(child(stt, 'users' )).then( async (snapshot) => {
         
         if(snapshot.exists()) {
             let usd = await Object.values(snapshot.val())
@@ -70,8 +70,9 @@ const signinIn = (signInWithEmailAndPassword, auth, database, ref,child, get, up
                 let tem =  usd[i].email;
                 array.push(tems)
             }
-            if(array.includes(username)){
-                let position = array.indexOf(username)
+            if(array.includes(username.toLowerCase())){
+                let position = array.indexOf(username.toLowerCase())
+                console.log(position)
                 let tem = usd[position].email
                 const email = username.replace(username, tem)
                 // alert(email + ' exits')  
