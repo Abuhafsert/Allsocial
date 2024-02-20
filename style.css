@@ -9,8 +9,12 @@
 
 
 body{
-    background: rgb(191, 206, 221);
+    background: rgb(198, 215, 222);
+    /* background: rgb(191, 206, 221); */
+
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
     /* display: flex;
     flex-direction: column; */
 }
@@ -34,7 +38,7 @@ body{
 
 
 .allsocial-list .balance {
-    color: antiquewhite;
+    color: rgb(238, 234, 228);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -81,7 +85,7 @@ body{
 }
 
 .allsocial-list .balance div p{
-    color: antiquewhite;
+    color: rgb(231, 230, 229);
     font-size: var(--font-size-primary);
 }
 
@@ -143,7 +147,6 @@ body{
     margin-bottom: 0;
     /* padding: 10px 10px; */
     border-radius: 5px;
-    box-shadow: 0 0 30px rgb(61, 61, 70);
     cursor: pointer;
     width: 50%;
     box-sizing: border-box;
@@ -217,19 +220,19 @@ body{
 }
 
 .allsocial-list .fa-square-instagram{
-    color: rgb(238, 144, 144);
+    color: rgb(231, 84, 84);
 }
 .allsocial-list .fa-square-facebook{
     color: rgb(98, 98, 153);
 }
 .allsocial-list .fa-square-facebook{
-    color: rgb(98, 98, 153);
+    color: rgb(43, 43, 158);
 }
 .allsocial-list .fa-tiktok{
     color: rgb(61, 60, 60);
 }
 .allsocial-list .fa-youtube{
-    color: rgb(232, 71, 71);
+    color: rgb(231, 38, 38);
 }
 .allsocial-list .fa-square-x-twitter{
     color: rgb(50, 50, 53);
@@ -398,7 +401,7 @@ body{
 .body-containers .body-headers{
     background: rgb(27, 54, 82, 1);
     padding: 10px;
-    box-shadow: 0 0 30px rgb(12, 23, 34);
+    box-shadow: 0 0 10px rgb(12, 23, 34);
     border-radius: 3px;
 }
 
@@ -485,7 +488,7 @@ body{
     background: rgba(27, 54, 82, 1);
     margin: 30px;
     border-radius: 3px;
-    box-shadow: 0 0 30px rgb(17, 27, 37);
+    box-shadow: 0 0 10px rgb(17, 27, 37);
     padding: 20px;
 
 }
@@ -496,7 +499,7 @@ body{
     /* justify-content: center; */
     justify-items: center;
     align-items: center;
-    background: linear-gradient(to right, rgb(153, 152, 155), rgb(143, 138, 132), rgb(174, 152, 124));
+    background: linear-gradient(to right, rgb(153, 152, 155),  rgb(174, 152, 124));
     margin-bottom: 0;
     padding: 0 10px;
     border-radius: 5px;
@@ -583,15 +586,8 @@ body{
 }
 
 
-/* .top-container {
-    height: 100vh;
-    position: relative;
-} */
-
-
 
 .endpoint {
-    width: 100%;
     padding: 10px;
     text-transform: capitalize;
     font-size: var(--font-size-tertiary);
@@ -601,75 +597,15 @@ body{
 .endpoint {
     display: flex;
     width: 100%;
-    position: absolute;
     justify-content: center;
     align-items: center;
+    bottom: 0;
     margin-top: 10%;
-    box-shadow: 0 0 5px aliceblue;
-    z-index: 1;
+    color: aliceblue;
 }
 
 
-.faq-header {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    margin-top: 50px;
-}
 
-.faq-header .faq,
-.faq-header ul{
-    margin: 0 20px;
-    width: 50ch;
-}
-
-.faq-header ul{
-    display: flex;
-    width: 70ch;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.faq-header li{
-    list-style: none;
-    margin: 0 20px;
-}
-
-.faq h4,
-.faq-header h5{
-    color: black;
-}
-
-
-.faq-header .socialmedia {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.faq-header .socialmedia h5{
-    margin: 0 10px;
-    font-size: var(--font-size-secondary);
-    text-align: center;
-}
-
-.faq-header .socialmedia i{
-    margin: 0 10px;
-    font-size: calc(var(--font-size-primary) - .2rem);
-}
-
-.faq-header li p{
-    font-size: var(--font-size-primary);
-    display: none;
-}
-
-
-.faq-header li .hidefaq {
-    display: block;
-}
 
 
 
@@ -684,6 +620,99 @@ body{
 
 
 
+
+.questions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    color: black;
+
+}
+
+.questions h2{
+    line-height: 2;
+    letter-spacing: .1rem;
+}
+
+.questions p{
+    width: 50ch;
+    color: rgb(91, 101, 109);
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 100;
+}
+
+.frequent {
+    margin: 20px 0 0;
+    font-size: var(--font-size-tertiary);
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+
+.answered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.answers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    margin: 10px 10px;
+    padding: 10px;
+    height: 80px;
+    border: 1px solid aliceblue;
+    border-radius: 8px;
+    background: aliceblue;
+}
+
+
+.answered span{
+    display: none;
+}
+
+.answers .frequent {
+    text-align: start;
+    margin: auto;
+    padding: 10px;
+    font-size: 1.3rem;
+}
+
+
+.answers i {
+    align-self: center;
+    color: rgba(33, 153, 159, 1);
+    font-size: 1rem;
+    margin: 0;
+}
+
+
+
+.plus-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5%;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(33, 153, 159, 1);
+    border-radius: 50px;
+}
+
+
+.questions .answered .hidefaq {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 
@@ -726,7 +755,29 @@ body{
         font-size: var(--font-size-primary);
         padding-left: 20px;
     }
-    .faq-header ul{
+
+    
+    .answers .frequent {
+        font-size: var(--font-size-primary);
+    }
+
+    .endpoint h5{
+        font-size: var(--font-size-secondary);
+    }
+    
+    .questions p{
+        width: 40ch;
+    }
+
+    
+    .questions .answered .hidefaq p{
+        width: 35ch;
+    }
+    .plus-icon {
+        margin-right: 2%;
+    }
+    
+    /* .faq-header ul{
         width: 50ch;
         flex-direction: column;
     }
@@ -745,7 +796,7 @@ body{
         margin: 0 5px;
         font-size: calc(var(--font-size-primary) - .2rem);
     }
-    
+     */
     
     
 }

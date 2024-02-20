@@ -106,7 +106,7 @@ divs.innerHTML = `        <div class="div">
             </div>
             </li>
             </ul>
-            <div class="show-more-header">
+        <div class="show-more-header">
             <div class="show-more">
             <p>
             Show more
@@ -256,9 +256,19 @@ document.body.prepend(divs)
   bars.addEventListener('click', menuBar)
   
   let showNotify = document.querySelector('.notifications')
+  let chevronNoitification = document.querySelector('.show-more .fa-chevron-right')
   
   function showNotification(){
-      showNotify.classList.toggle('hide')
+      setTimeout(function(){
+          showNotify.classList.toggle('hide')
+        // header.classList.toggle("hide")
+        if(showNotify.className === 'notifications hide'){
+            chevronNoitification.style.transform = 'rotate(90deg)'
+        }else{
+            chevronNoitification.style.transform = 'rotate(0)'
+
+        }
+    }, 200)
   }
   
   let showMore = document.querySelector('.show-more')
@@ -277,68 +287,93 @@ document.body.prepend(divs)
   let rss = document.createElement('div')
   rss.innerHTML = 
   `
-  <header class="faq-header">
-  <div class="faq">
-      <h4>
+  <div class="questions">
+  <span class="frequently">
+      <h2 class="frequent">
           FAQ
-      </h4>
+          <!-- Frequently asked questions -->
+      </h2>
+  </span>
+  <p>
+      AllSocialMediaPanel makes it safe to buy all social media 
+      from our platform buy securing your payment and guaranteeing 
+      good service.
+  </p>
+<main class="answered">
+  <div class="answers">
+      <h2 class="frequent">
+          what is AllSocialMediaPanel for?
+      </h2>
+      <div class="plus-icon nav"><i class="fa-solid fa-plus"></i></div>
+  </div>
+  <span>
       <p>
-          AllSocialMediaPanel makes it safe to buy all social media 
-          from our platform buy securing your payment and guaranteeing 
+          AllSocialMediaPanel are online market where millions of people can purchase all types of
+          social media pages at cheap prices.
+      </p>
+  </span>
+  <div class="answers">
+      <h2 class="frequent">
+          where to purchase social media accounts?
+      </h2>
+      <div class="plus-icon nav"><i class="fa-solid fa-plus"></i></div>
+  </div>
+  <span>
+      <p>
+          there are many agencies whom social media can be bought
+          or purchased online. one of the best agencies or platform
+          is AllSocialMediaPanel with 100% guaranty safe and secure.
+      </p>
+  </span>
+  <div class="answers">
+      <h2 class="frequent">
+          what Media services can i buy on your platform?
+      </h2>
+      <div class="plus-icon nav"><i class="fa-solid fa-plus"></i></div>
+  </div>
+  <span>
+      <p>
+          our market provides different types of social media page,
+          such as instagram, facebook, twitter, tiktok, youtube etc.
+      </p>
+  </span>
+  <div class="answers nav">
+      <h2 class="frequent">
+          are media services offered here a safe to order?
+      </h2>
+      <div class="plus-icon"><i class="fa-solid fa-plus"></i></div>
+  </div>
+  <span>
+      <p>
+          AllSocialMediaPanel makes it safe to buy all social media
+          from our platform buy securing your payment and guaranteeing
           good service.
       </p>
+  </span>
+  <div class="answers">
+      <h2 class="frequent">
+          where to contacts us?
+      </h2>
+      <div class="plus-icon nav"><i class="fa-solid fa-plus"></i></div>
   </div>
-  <ul>
-      <li>
-          <div class="socialmedia">
-              <h5>
-                  where to purchase social media accounts?
-                  <i class="fa-solid fa-chevron-right"></i>
-              </h5>
-          </div>
-          <p class="answer1">
-              there are many agencies whom social media can be bought
-              or purchased online. one of the best agencies or platform 
-              is AllSocialMediaPanel with 100% guaranty safe and secure.
-          </p>
-      </li>
-      <li>
-          <div class="socialmedia">
-              <h5>
-                  where to contacts us?
-                  <i class="fa-solid fa-chevron-right"></i>
-              </h5>
-          </div>
-          <p class="answer2">
-              the only way to contacts AllSocialMediaPanel
-              is via whatsApp 
-          </p>
-      </li>
-      <li>
-          <div class="socialmedia" value="1">
-              <h5>
-                  how much to buy social media accounts on this page?
-                  <i class="fa-solid fa-chevron-right"></i>
-              </h5>
-          </div>
-          <p class="answer3">
-              the cost depend on the years and number of followers. 
-              however the minimum price in this page is between 100 to 500.
-              maximum depend on your need.
-          </p>
-      </li>
-  </ul>
-</header>
+  <span>
+      <p>
+          the only way to contacts AllSocialMediaPanel
+          is via whatsApp and instagram
+      </p>
+  </span>
+</main>
 <div class="rss endpoint">
   <h5>
       © Copyright 2023. All right Reserved by AllSocialMediaPanel
   </h5>
 </div>
   `
-  let socialmedias = rss.querySelectorAll('.socialmedia')
+
+  let socialmedias = rss.querySelectorAll('.plus-icon')
   socialmedias.forEach(socialmedia =>{
       socialmedia.addEventListener('click', (e)=>{
-          showHideUserFaq(socialmedia.nextElementSibling, socialmedia.lastElementChild)
+          showHideUserFaq(socialmedia.parentElement.nextElementSibling, socialmedia.firstElementChild)
     })
   })
 

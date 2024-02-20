@@ -3,6 +3,7 @@
 
 body{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -20,6 +21,7 @@ body{
     border-radius: 5px;
     font-weight: 400;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .table-order table{
@@ -43,20 +45,20 @@ body{
     border-radius: 5px;
     text-align: center;
   }
+
   
   .table-order tbody td{
     border: 1px solid lightgrey;
-    font-size: 7px;
+    font-size: 0.7rem;
     color: #d2c0abfc;
     color: rgb(223, 223, 214);
     text-align: center;
     padding: 10px;
     box-sizing: border-box;
-    letter-spacing: 0.9px;
-    line-height: 10px;
-
-}
-
+    letter-spacing: 0.5px;
+    
+  }
+  
 
 main {
     position: relative;

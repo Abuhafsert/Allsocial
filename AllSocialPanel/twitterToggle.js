@@ -1,4 +1,4 @@
-
+import { sleep } from "./dayTime.js"
 
 function showHideUserTwitter(header, listTwitter, chevronRightTwitter) {
     setTimeout(function(){
@@ -43,15 +43,14 @@ function showHideUserFacebook(headerFacebook, listFacebook, chevronRightFacebook
         }
     }, 200)
 }
-function showHideUserFaq(headerFaq, chevronRightFaq) {
+function showHideUserFaq(headerFaq, faPlus) {
     setTimeout(function(){
+        sleep(200)
         headerFaq.classList.toggle("hidefaq")
-        if(headerFaq.className === 'answer hidefaq'){
-            // listFacebook.style.borderRadius = '5px 5px 0 0'
-            chevronRightFaq.style.transform = 'rotate(90deg)'
+        if(headerFaq.className === 'hidefaq'){
+            faPlus.className = 'fa-solid fa-minus'
         }else{
-            // listFacebook.style.borderRadius = '5px'
-            chevronRightFaq.style.transform = 'rotate(0)'
+            faPlus.className = 'fa-solid fa-plus'
 
         }
     }, 200)
